@@ -12,21 +12,21 @@
   <% end %>
 
   <div class="form-group">
-    <%= form.label :title %>
+  
     <%= form.text_field :title, placeholder: "Blog Entry Title", class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <%= form.label :author %>
-    <%= form.text_field :author, placeholder: "Your Name Here", class: "form-control" %>
+   
+    <%= form.hidden_field :user_id, value: current_user.id %>
   </div>
 
   <div class="form-group">
-    <%= form.label :blog_entry %>
+   
     <%= form.text_area :blog_entry, placeholder: "Tell Us Something...", class: "form-control" %>
   </div>
 
-  <div class="form-group">
-    <%= form.submit "Submit", class: "btn btn-primary" %>
+  <div class="actions">
+    <%= form.submit "Submit", class: "btn btn-primry" %>
   </div>
 <% end %>

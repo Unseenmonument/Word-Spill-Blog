@@ -7,6 +7,14 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+
+
+#   def user
+#     @user = User.new  
+#   end
+# I just added this, it might not work properly
+
+
   # GET /posts/1
   # GET /posts/1.json
   def show
@@ -69,7 +77,11 @@ class PostsController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
+    # def post_params
+    #   params.require(:post).permit(:title, :author, :blog_entry)
+    # end
+
     def post_params
-      params.require(:post).permit(:title, :author, :blog_entry)
+      params.require(:post).permit(:title, :author, :blog_entry, :user_id)
     end
 end
